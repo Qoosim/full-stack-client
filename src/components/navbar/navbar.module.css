@@ -1,0 +1,45 @@
+.header {
+  padding: 0.7rem 3rem;
+  background: #212121;
+  color: #afacac; 
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.home {
+  color: #afacac;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navigation * {
+  text-decoration: none;
+  color: #afacac;
+  cursor: pointer;
+}

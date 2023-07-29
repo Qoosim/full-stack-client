@@ -1,0 +1,27 @@
+.homeWrapper {
+  width: 60%;
+  height: 300px;
+  margin: 3rem auto;
+  background-color: #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeWrapper > h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.homeWrapper > p {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.loginBtn {
+  padding: 0.5rem 2.3rem;
+}

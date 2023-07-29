@@ -1,0 +1,56 @@
+.formWrapper {
+  width: 30%;
+  height: auto;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: #ebe9e9;
+  border-radius: 10px;
+}
+
+.formAvatar {
+  font-size: 8rem !important;
+  color: #918d8d !important;
+  margin-top: 20px;
+}
+
+.form {
+  width: 100%;
+  padding: 2rem;
+  margin-top: -2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.formLabel {
+  margin-bottom: 0.3rem;
+}
+
+.formGroup > input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.signupBtn {
+  display: block;
+  width: 90%;
+  margin: 2rem auto 1rem auto;
+}
+
+.haveAccount {
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+  font-size: 17px;
+  font-weight: 300;
+  font-style: italic;
+}
