@@ -11,6 +11,8 @@ const Posts = () => {
   const [editingPostId, setEditingPostId] = useState(null);
   const navigate = useNavigate();
 
+  console.log(posts);
+
   axios.defaults.headers.common[
     "Authorization"
   ] = `Bearer ${localStorage.getItem("token")}`;
@@ -165,7 +167,7 @@ const Posts = () => {
           )}
         </form>
         <div className="mt-8">
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <div key={post._id} className="">
               <h2 className="">{post.title}</h2>
               <p>{post.content}</p>
