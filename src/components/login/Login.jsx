@@ -5,10 +5,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './login.module.css';
 import { toast } from 'react-toastify';
 
+import { basedUrl } from '../../basedUrl';
+
 const Login = () => {
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate()
+
+  // axios.defaults.baseURL = "https://node-api-endpoints.onrender.com/api";
+  basedUrl();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

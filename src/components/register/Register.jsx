@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import styles from './register.module.css';
+import { basedUrl } from '../../basedUrl';
 
 const Register = () => {
   const username = useRef();
@@ -11,6 +12,8 @@ const Register = () => {
   const password = useRef();
   const passwordConfirm = useRef();
   const navigate = useNavigate();
+
+  basedUrl();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

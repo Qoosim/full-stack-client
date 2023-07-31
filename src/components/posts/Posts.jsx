@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { basedUrl } from "../../basedUrl";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,8 @@ const Posts = () => {
   axios.defaults.headers.common[
     "Authorization"
   ] = `Bearer ${localStorage.getItem("token")}`;
-  // axios.defaults.baseURL = "http://localhost:5000";
+  // axios.defaults.baseURL = "https://node-api-endpoints.onrender.com/api";
+  basedUrl();
 
   const fetchPosts = async () => {
     try {
