@@ -63,11 +63,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Register Users]**
-- **[Login Users]**
-- **[Create Posts]**
-- **[Edit Posts]**
-- **[Delete Posts]**
+- **Register Users**
+- **Login Users**
+- **Create Posts**
+- **Edit Posts**
+- **Delete Posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,10 +114,7 @@ To run the project, execute the following command:
 ### Deployment
 
 You can deploy this project using:
-
-```
-  [Netlify](https://www.netlify.com/?attr=homepage-modal)
-```
+ - [Netlify](https://www.netlify.com/?attr=homepage-modal)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -134,10 +131,10 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Comment on Posts]**
-- [ ] **[Like Posts]**
-- [ ] **[Follow Users]**
-- [ ] **[Unfollow Users]**
+- [ ] **Comment on Posts**
+- [ ] **Like Posts**
+- [ ] **Follow Users**
+- [ ] **Unfollow Users**
 
 <!-- CONTRIBUTING -->
 ## 🤝 Contributing <a name="contributing"></a>
