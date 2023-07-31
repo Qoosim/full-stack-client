@@ -25,11 +25,11 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         <nav className={styles.headerRight}>
             <ul className={styles.navigation}>
               { isLoggedIn ? (
-                <Link to="/login" onClick={logout} className={styles.register}>Logout</Link>
+                <Link to="/login" onClick={logout}>Logout</Link>
                 ) : (
                 <div className={styles.navigation}>
-                  <Link to="/login" className={styles.login}>Login</Link>
-                  <Link to="/register" className={styles.register}>Sign Up</Link>
+                  <Link to="/login">Login</Link>
+                  <Link to="/register">Sign Up</Link>
                 </div>
               )}
             </ul>

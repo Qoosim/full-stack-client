@@ -1,7 +1,6 @@
 // src/App.jsx
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { basedUrl } from "../../basedUrl";
 
@@ -10,7 +9,6 @@ const Posts = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [editingPostId, setEditingPostId] = useState(null);
-  const navigate = useNavigate();
 
   axios.defaults.headers.common[
     "Authorization"
@@ -87,8 +85,8 @@ const Posts = () => {
       setContent("");
       setEditingPostId(null); // Reset editingPostId after successful update
       toast.success(editedPost.data.message);
-    } catch (error) {
-      toast.error(error.response.data.error);
+    } catch (err) {
+      toast.error(err.response.data.error);
     }
   };
 
@@ -99,94 +97,78 @@ const Posts = () => {
     toast.info("Editing cancelled");
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    toast.success("You are now logged out");
-    navigate("/login");
-  };
-
   useEffect(() => {
     fetchPosts();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (editingPostId) {
+      saveEditedPost(); // save edited post
+    } else {
+      createPost(); // create new post
+    }
+  }
+
   return (
     <div className="container">
-      <div className="">
-        <div className="">
-          <h1 className="">List of Posts</h1>
-          <button
-            onClick={logout}
-            className=""
-          >
-            Logout
-          </button>
+      <h1 className="heading-1 text-center mt-4">Create Post Form</h1>
+      <form onSubmit={handleSubmit} className="w-50 mx-auto my-4">
+        <div class="mb-3">
+          <input 
+            type="text"
+            className="form-control"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            if (editingPostId) {
-              // Save edited post
-              saveEditedPost();
-            } else {
-              // Create new post
-              createPost();
-            }
-          }}
-        >
-          <div className="mb-4">
-            <input
-              type="text"
-              placeholder="Title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              className=""
-            />
-          </div>
-          <div className="mb-4">
-            <textarea
-              placeholder="Content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className=""
-            />
-          </div>
-          <button
-            type="submit"
-            className=""
-          >
-            {editingPostId ? "Save Post" : "Create Post"}
-          </button>
-          {editingPostId && (
-            <button
-              type="button"
-              onClick={cancelEditing}
-              className=""
-            >
-              Cancel
-            </button>
-          )}
-        </form>
-        <div className="mt-8">
-          {posts?.map((post) => (
-            <div key={post._id} className="">
-              <h2 className="">{post.title}</h2>
-              <p>{post.content}</p>
-              <button
-                onClick={() => deletePost(post._id)}
-                className=""
-              >
-                Delete
-              </button>
-              <button
-                onClick={() => toggleEditMode(post._id)}
-                className=""
-              >
-                Edit
-              </button>
-            </div>
-          ))}
+        <div class="mb-3">
+          <textarea
+            className="form-control" 
+            rows="3"
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
         </div>
+        <button type="submit" className="btn btn-primary me-2">
+          {editingPostId ? "Save Post" : "Create Post"}
+        </button>
+        {editingPostId && (
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={cancelEditing}
+          >
+            Cancel
+          </button>
+        )}
+      </form>
+      <div className="my-4 text-center">
+        <h1 className="">List of Posts</h1>
       </div>
+      <table class="table table-success table-striped table-hover w-75 mx-auto">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {posts?.map((post) => (
+            <tr key={post._id}>
+              <td className="">{post.title}</td>
+              <td>{post.content}</td>
+              <td>
+                <button className="btn btn-danger me-2" onClick={() => deletePost(post._id)}>Delete</button>
+                <button className="btn btn-info" onClick={() => toggleEditMode(post._id)}>Edit</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
