@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 import { basedUrl } from '../../basedUrl';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate()
@@ -26,6 +26,7 @@ const Login = () => {
       localStorage.setItem("token", data.token);
       toast.success("Successfully logged in");
       navigate("/posts");
+      setIsLoggedIn(true)
     } catch (err) {
       toast.error(err.response.data.error)
     }
