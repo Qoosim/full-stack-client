@@ -21,7 +21,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -81,65 +80,46 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
-
 ### Prerequisites
-
 In order to run this project you need:
-
-<!--
-Example command:
 
 ```
   - node
   - npm
 ```
- -->
-
 ### Setup
 
 Clone this repository to your desired folder:
-<!--
-Example commands:
 
-```sh
+```
   cd my-folder
   git clone git@github.com:Qoosim/full-stack-client.git
 ```
---->
 
 ### Install
 Install this project with:
-<!--
-Example command:
 
-```sh
+```
   cd my-project
   npm install
 ```
---->
 ### Usage
 To run the project, execute the following command:
-<!--
-Example command:
-```sh
+
+```
   npm start
 ```
---->
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
-
-```sh
+```
   [Netlify](https://www.netlify.com/?attr=homepage-modal)
 ```
- -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -168,8 +148,6 @@ Feel free to check the [issues page](https://github.com/Qoosim/full-stack-client
 
 <!-- SUPPORT -->
 ## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
 
 If you like this project to have more features. Any suggestions that would make it more robust is welcome.
 <!-- ACKNOWLEDGEMENTS -->
